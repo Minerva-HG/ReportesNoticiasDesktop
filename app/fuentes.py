@@ -3,7 +3,9 @@ import random
 
 RSS_FUENTES = [
     "https://feeds.elpais.com/mrss-s/pages/ep/site/economia",
-    "https://feeds.elpais.com/mrss-s/pages/ep/site/tecnologia"
+    "https://feeds.elpais.com/mrss-s/pages/ep/site/tecnologia",
+    "https://inteligencia-artificial294.webnode.es/rss/all.xml",
+    "https://inteligencia-artificial294.webnode.es/rss/novedades.xml"
 ]
 
 def obtener_noticias():
