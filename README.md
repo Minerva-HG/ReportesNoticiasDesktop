@@ -41,7 +41,16 @@ Antes de comenzar, necesitas:
 3. Verifica la instalación:
    ```bat
    python --version
+---
+en CMD
+cd C:\Reportes_Automaticos
+python -m venv venv
+venv\Scripts\activate
 
+pip install python-docx openpyxl feedparser schedule requests
+
+
+---
 4. 📁 Estructura del proyecto
 La carpeta del proyecto debe verse así:
 Reportes_Automaticos/
@@ -58,12 +67,13 @@ Reportes_Automaticos/
         └── reportes/
 
 -- Todos los archivos .py deben estar dentro de la carpeta app
+
 5. nstalación de dependencias
 Abre una ventana de Símbolo del sistema (CMD) y ejecuta:
 pip install python-docx openpyxl feedparser
 
 6. cd C:\Reportes_Automaticos\app
-7. python main.py
+  python main.py
 
 🖥️ ¿Qué verás al ejecutarlo?
 
@@ -80,7 +90,7 @@ El proceso puede tardar varias horas (configurable)
 ✅ Puedes minimizar la ventana
 ✅ El proceso sigue ejecutándose en segundo plano
 
-8.  Dónde se guardan los reportes
+7.  Dónde se guardan los reportes
 Al finalizar, los archivos se generan en:
 app/output/reportes/
 
@@ -89,7 +99,7 @@ Ejemplo:
 reporte_2026-04-06.docx
 reporte_2026-04-06.xlsx
 
-9. 🔄 Limpieza automática
+8. 🔄 Limpieza automática
 Cada vez que se inicia el sistema:
 
 Se eliminan reportes anteriores
@@ -97,7 +107,7 @@ Se limpian archivos temporales (cache)
 
 Esto evita acumulación de archivos y errores.
 
-10. ⏱️ Configuración del tiempo del proceso
+9. ⏱️ Configuración del tiempo del proceso
 En el archivo config.py puedes modificar:
 
 PythonDURACION_HORAS = 6   # horas totales del procesoBLOQUES = 12        # número de pasos (progreso)Mostrar más líneas
@@ -105,7 +115,7 @@ Ejemplo:
 
 6 horas / 12 bloques = 1 bloque cada 30 minutos 
 
-11. 🔟 EJECUCIÓN AUTOMÁTICA DIARIA (WINDOWS)
+10. 🔟 EJECUCIÓN AUTOMÁTICA DIARIA (WINDOWS)
 ✅ PASOS EN Task Scheduler
 
 Abrir Programador de tareas
