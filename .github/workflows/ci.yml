@@ -1,0 +1,51 @@
+name: CI - Reportes Automáticos
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verificar sintaxis (py_compile)
+        run: |
+          python -m py_compile app/main.py
+          python -m py_compile app/config.py
+          python -m py_compile app/fuentes.py
+          python -m py_compile app/generadores.py
+          python -m py_compile app/limpieza.py
+          python -m py_compile app/redactor.py
+          python -m py_compile app/email_sender.py
+          python -m py_compile app/ui.py
+          python -m py_compile app/estado.py
+
+      - name: Verificar imports
+        run: |
+          cd app
+          python -c "
+          import config
+          import fuentes
+          import generadores
+          import limpieza
+          import redactor
+          import email_sender
+          import estado
+          print('Todos los imports OK')
+          "

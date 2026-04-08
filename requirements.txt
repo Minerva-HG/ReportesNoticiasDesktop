@@ -1,0 +1,13 @@
+certifi==2026.2.25
+charset-normalizer==3.4.7
+et_xmlfile==2.0.0
+feedparser==6.0.12
+idna==3.11
+lxml==6.0.2
+openpyxl==3.1.5
+python-docx==1.2.0
+requests==2.33.1
+schedule==1.2.2
+sgmllib3k==1.0.0
+typing_extensions==4.15.0
+urllib3==2.6.3

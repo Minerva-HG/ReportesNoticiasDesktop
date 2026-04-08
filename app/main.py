@@ -1,6 +1,17 @@
 from threading import Thread
 from datetime import datetime
 import time
+import os
+
+# Cargar variables de entorno desde .env si existe
+env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
+if os.path.exists(env_path):
+    with open(env_path) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, val = line.split("=", 1)
+                os.environ.setdefault(key.strip(), val.strip())
 
 from limpieza import limpiar
 from fuentes import obtener_noticias
